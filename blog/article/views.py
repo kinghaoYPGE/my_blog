@@ -10,12 +10,12 @@ def blog_search(request):
         if not s:
             return render(request, 'home.html')
         else:
-            post_list = Article.objects.filter(title__icontains = str(s))
+            post_list = Article.objects.filter(title__icontains = s)
             if len(post_list) == 0:
-                 return render(request, 'archives.html', {'post_list': post_list, 'error': True})
+                  return render(request, 'archives.html', {'post_list': post_list, 'error': True})
             else:
-                 return render(request, 'archives.html', {'post_list': post_list, 'error': False})
-    return redirect('/')
+                  return render(request, 'archives.html', {'post_list': post_list, 'error': False})
+        return redirect('/')
 
 def search_tag(request, tag):
     try:

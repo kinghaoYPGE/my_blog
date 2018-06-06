@@ -12,6 +12,12 @@
 <body>
 <div id="layout" class="pure-g">
 <div class="sidebar pure-u-1 pure-u-md-1-4">
+
+                    <li>
+                    <form class="pure-form" action="/search/" method="get">
+&nbsp;                   <input class="pure-input-3-3" type="text" name="s" placeholder="search">
+                    </form>
+                    </li>
         <div class="header">
             <h1 class="brand-title"><a href="{% url "home" %}">Andrew Liu Blog</a></h1>
             <h2 class="brand-tagline">Snow Memory</h2>
@@ -35,13 +41,23 @@
                     <li class="nav-item">
                         <a class="button-success pure-button" href="{% url "about_me" %}">About Me</a>
                     </li>
-                    <li>
-                    <form class="pure-form" action="/search/" method="get">
-                    <input class="pure-input-3-3" type="text" name="s" placeholder="search">
-                    </form>
-                    </li>
                 </ul>
             </nav>
+        </div>
+    </div>
+    <div class="content pure-u-1 pure-u-md-3-4">
+        <div>
+            {% block content %}
+            {% endblock %}
+            <div class="footer">
+                <div class="pure-menu pure-menu-horizontal pure-menu-open">
+                    <ul>
+                        <li><a href="http://andrewliu.tk/about/">About Me</a></li>
+                        <li><a href="http://twitter.com/yuilibrary/">Twitter</a></li>
+                        <li><a href="http://github.com/yahoo/pure/">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>
